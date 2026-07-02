@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="refresh" content="0; url=/" />
+    <meta name="robots" content="noindex" />
+    <title>Redirecting…</title>
+    <script>
+      // Try to navigate to index while preserving path for SPA hosts
+      (function () {
+        try {
+          var url = window.location.pathname + window.location.search + window.location.hash;
+          history.replaceState(null, '', '/');
+          window.location.replace('/');
+        } catch (e) {
+          window.location.replace('/');
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    Redirecting…
+  </body>
+</html>
